@@ -1,13 +1,11 @@
 package com.example.multithrading
 
-
 import android.app.NotificationChannel
 import android.app.NotificationManager
 import android.app.PendingIntent
 import android.content.Context
 import android.content.Intent
 import android.os.Build
-import android.telephony.AvailableNetworkInfo.PRIORITY_HIGH
 import android.util.Log
 import androidx.core.app.NotificationCompat
 import androidx.work.Worker
@@ -42,7 +40,7 @@ class PushWorker(
             .setContentIntent(pendingintent)
             .setContentTitle("Timer")
             .setContentText(timer)
-            .setPriority(PRIORITY_HIGH) //не разобрался пока с нотификаторами android q
+
         createChannelIfNeed(notificationManager)
         notificationManager.notify(1, notificationBuilder.build())
 
