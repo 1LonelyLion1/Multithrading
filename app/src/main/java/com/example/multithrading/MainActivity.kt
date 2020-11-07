@@ -39,7 +39,7 @@ class MainActivity : AppCompatActivity() {
                     val handler = Handler(Looper.getMainLooper())
                     var time = 0
 
-                    while (true) {
+                    while (itsRun) {
                         Thread.sleep(1000)
                         time++
 
@@ -93,6 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onDestroy() { //может не вызваться при освобождении памяти системой. Способ ненадежный((
         super.onDestroy()
+        itsRun = false
        startWork()
     }
 
